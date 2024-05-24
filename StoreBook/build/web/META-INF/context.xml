@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/StoreBook">
+  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="trinh" password="0410" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/dbbookshop?zeroDateTimeBehavior=CONVERT_TO_NULL" username="root"/>
+</Context>

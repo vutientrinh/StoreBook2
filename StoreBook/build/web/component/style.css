@@ -1,0 +1,688 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    List book jsp
+*/
+
+body {
+    font-family: IBM Plex Sans, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    color: var(--color-dark-text);
+    min-height: 100vh;
+}
+.book-container .bar-header{
+    background-color: #573ba3;
+
+
+}
+.book-container .bar-header .header-item{
+    max-width: 1024px;
+    margin-bottom: 2rem;
+    height: 25rem;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.book-container .bar-header img{
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    overflow: hidden;
+    display: block;
+}
+.book-container .bar-header .caption{
+    padding: 16px;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+.book-container .bar-header .caption h1{
+    margin-bottom: 0.75rem;
+    letter-spacing: -1px;
+    color: white;
+    font-family: GT Super Bold, serif;
+    font-size: 32;
+    letter-spacing: -1px;
+    margin:0;
+    margin-right: 0;
+}
+.book-container .bar-header .text-white{
+    opacity: 1;
+    color: white;
+    line-height: 1.25;
+
+}
+.book-container .bar-header .text-white img{
+    border-style: solid;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    color: white;
+}
+.book-container .bar-header .text-white a{
+    background-color: inherit;
+    text-decoration: inherit;
+}
+.book-container .bar-header .text-white img{
+    border-radius: 50%;
+    border: 1.5px solid #e1e1e3;
+    box-shadow: 0 1px 4px 0 rgba(40,29,50,0.12);
+    height: 4rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 4rem;
+    display: inline;
+    vertical-align: middle;
+}
+
+.book-container .bar-header .text-white span{
+    margin-left: 0.5rem;
+    color: white;
+
+}
+.book-container .intro-list{
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 18px;
+}
+.book-container .intro-list p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 18px;
+}
+
+
+
+/* start of list */
+.book-container .list-item .item{
+    border-bottom-width: 1px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    border-color: #e1e1e3;
+}
+.book-container .list-item .item a{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+.book-container .list-item .item .detail-item{
+    flex: 1 1 0%;
+    display: block;
+    padding-left: 32px;
+}
+.book-container .list-item .item form{
+    display: block;
+    margin-top: 0em;
+
+}
+.book-container .list-item .item .button-cart{
+    max-width: 10rem;
+    height: 40px;
+}
+
+.book-container .item form .button{
+    width: 100%;
+    border-width: 1px;
+    border-color: #de2454;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #de2454;
+    display: inline-flex;
+    cursor: pointer;
+    height:100%;
+    color: white;
+}
+
+/* last */
+
+.book-container .bar-bottom{
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 48rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 18px;
+}
+.book-container .bar-bottom p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+}
+
+
+/*end of list book*/
+
+
+
+
+/*  cart css*/
+
+
+
+html {
+    background: #fff;
+    font: 62.5%/1.5em "Trebuchet Ms", helvetica;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; /* For Chrome and Safari */
+    font-smooth: always; /* For Firefox */
+}
+
+@font-face {
+    font-family: 'Shopper';
+    src: url('http://www.shopperfont.com/font/Shopper-Std.ttf');
+}
+
+.shopper {
+    text-transform: lowercase;
+    font: 32px 'GT Super Bold', serif;
+    line-height: 0.5em;
+    display: inline-block;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font: 34px "GT Super Bold", serif;
+    font-size: 32px;
+    color:#000000;
+}
+
+p {
+    font-size: 1.5em;
+    color: #8a8a8a;
+}
+
+input {
+    border: 0.3em solid #bbc3c6;
+    padding: 0.5em 0.3em;
+    font-size: 1.4em;
+    color: #8a8a8a;
+    text-align: center;
+}
+
+img {
+    max-width: 9em;
+    width: 100%;
+    overflow: hidden;
+    margin-right: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1000px;
+    width: 95%;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.6em;
+    background: #fff;
+    box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
+}
+
+.heading {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+    color: #f34d35;
+    background: #f7f7f7;
+}
+
+.cart {
+    margin: 2.5em;
+    overflow: hidden;
+}
+
+.cart.is-closed {
+    height: 0;
+    margin-top: -2.5em;
+}
+
+.table {
+    background: #ffffff;
+    border-radius: 0.6em;
+    overflow: hidden;
+    clear: both;
+    margin-bottom: 1.8em;
+}
+
+.layout-inline > * {
+    display: inline-block;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.th {
+    background: #fff;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.tf {
+    background: #fff;
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 1.2em;
+}
+
+.tf p {
+    color: #000;
+    font-weight: bold;
+}
+
+.col {
+    padding: 1em;
+    width: 12%;
+}
+
+.col-pro {
+    width: 44%;
+}
+
+.col-pro > * {
+    vertical-align: middle;
+}
+
+.col-qty {
+    text-align: center;
+    width: 17%;
+}
+
+.col-numeric p {
+    font: bold 1.8em helvetica;
+}
+
+.col-total p {
+    color: #12c8b1;
+}
+
+.tf .col {
+    width: 20%;
+}
+
+.row > div {
+    vertical-align: middle;
+}
+
+.row-bg2 {
+    background: #fff;
+}
+
+.visibility-cart {
+    position: absolute;
+    color: #000;
+    top: 0.5em;
+    right: 0.5em;
+    font: bold 2em arial;
+    border: 0.16em solid #000;
+    border-radius: 2.5em;
+    padding: 0 0.22em 0 0.25em;
+}
+
+.col-qty > * {
+    vertical-align: middle;
+}
+
+.col-qty > input {
+    max-width: 2.6em;
+}
+
+a.qty {
+    width: 1em;
+    line-height: 1em;
+    border-radius: 2em;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    background: #43ace3;
+    color: #fff;
+}
+
+a.qty:hover {
+    background: #3b9ac6;
+}
+
+.btn, .btnupdate {
+    padding: 10px 30px;
+    border-radius: 0.3em;
+    font-size: 1.4em;
+    font-weight: bold;
+    box-shadow: 0 3px 0 rgba(59, 154, 198, 1);
+    border: 2px solid #DE2454; /* Thêm dòng này để thêm viền đỏ */
+
+}
+
+.btn {
+    background: #DE2454;
+    color: #fff;
+}
+
+.btnupdate {
+    background: #fff;
+    color: #DE2454;
+}
+
+.btn:hover, .btnupdate:hover {
+    box-shadow: 0 3px 0 rgba(59, 154, 198, 0);
+    border: 2px solid #DE2454; /* Thêm dòng này để thêm viền đỏ */
+
+}
+.btn, .btnupdate {
+    margin-right: 10px;
+}
+.btn-update {
+    float: right;
+    margin: 0 10px 1.5em 0;
+}
+
+.col-trash {
+    width: 5%; /* Điều chỉnh kích thước của cột chứa hình thùng rác */
+}
+
+.delete-icon {
+    width: 20px; /* Điều chỉnh kích thước của hình thùng rác */
+    cursor: pointer; /* Biến con trỏ thành hình bàn tay khi di chuột qua hình thùng rác */
+}
+
+
+.transition {
+    transition: all 0.3s ease-in-out;
+}
+
+.account-info {
+    width: 50%; /* Điều chỉnh chiều rộng theo ý muốn */
+    margin: 0 auto; /* Tự động căn giữa theo chiều ngang */
+    text-align: center; /* Căn giữa nội dung theo chiều ngang */
+    font-size: 0.9em;
+    color: #333;
+}
+
+.account-info a {
+    color: #1e64af;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 755px) {
+    .container {
+        width: 8%;
+    }
+
+    .col-pro {
+        width: 35%;
+        display: flex;
+        align-items: center;
+    }
+
+    .col-qty {
+        width: 22%;
+    }
+
+    .col-pro img {
+        max-width: 100%;
+        max-height: 100px; /* Adjust the value based on your design */
+        overflow: hidden;
+        margin-right: 1em;
+    }
+
+    .col-pro p {
+        flex-grow: 1;
+        font-size: 1.5em; /* Adjust font size as needed */
+        color: #8a8a8a;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Add an ellipsis for overflow text */
+        white-space: nowrap; /* Prevent text from wrapping */
+    }
+
+    .row {
+        margin-bottom: 1em; /* Add space between rows */
+    }
+
+    img {
+        max-width: 100%;
+        margin-bottom: 1em;
+    }
+}
+
+/*end of cart.jsp*/
+
+
+/* These styles are only for rendering in a browser */
+
+/*
+  The styles here for use when generating a PDF invoice with the HTML code.
+
+  * Set up a repeating page counter
+  * Place the .footer-info in the last page's footer
+*/
+/*
+  Common invoice styles. These styles will work in a browser or using the HTML
+  to PDF anvil endpoint.
+*/
+
+body {
+  font-size: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr td {
+  padding: 0;
+}
+
+table tr td:last-child {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.right {
+  text-align: right;
+}
+
+.large {
+  font-size: 1.75em;
+}
+
+.total {
+  font-weight: bold;
+  color: #fb7578;
+}
+
+.logo-container {
+  margin: 20px 0 70px 0;
+}
+
+.invoice-info-container {
+  font-size: 0.875em;
+}
+
+.invoice-info-container td {
+  padding: 4px 0;
+}
+
+.client-name {
+  font-size: 1.5em;
+  vertical-align: top;
+}
+
+.line-items-container {
+  margin: 70px 0;
+  font-size: 0.875em;
+}
+
+
+.line-items-container td img {
+  max-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  /* Thêm thuộc tính vertical-align */
+  margin-right: 25px;
+}
+
+.line-items-container th {
+  text-align: left;
+  color: #999;
+  border-bottom: 2px solid #ddd;
+  padding: 10px 0 15px 0;
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+
+.line-items-container th:last-child {
+  text-align: right;
+}
+
+.line-items-container td {
+  padding: 15px 0;
+}
+
+.line-items-container tbody tr:first-child td {
+  padding-top: 25px;
+}
+
+.line-items-container.has-bottom-border tbody tr:last-child td {
+  padding-bottom: 25px;
+  border-bottom: 2px solid #ddd;
+}
+
+.line-items-container.has-bottom-border {
+  margin-bottom: 0;
+}
+
+.line-items-container th.heading-quantity {
+  width: 50px;
+}
+
+.line-items-container th.heading-price {
+  text-align: right;
+  width: 100px;
+}
+
+.line-items-container th.heading-subtotal {
+  width: 100px;
+}
+
+.payment-info {
+  width: 38%;
+  font-size: 0.75em;
+  line-height: 1.5;
+}
+
+.footer {
+  margin-top: 100px;
+}
+
+.footer-thanks {
+  font-size: 1.125em;
+}
+
+.footer-thanks img {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  width: 16px;
+  margin-right: 4px;
+}
+
+.footer-info {
+  float: right;
+  margin-top: 5px;
+  font-size: 0.75em;
+  color: #ccc;
+}
+
+.footer-info span {
+  padding: 0 5px;
+  color: black;
+}
+
+.footer-info span:last-child {
+  padding-right: 0;
+}
+
+.page-container {
+  display: none;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+.footer-info {
+  float: none;
+  position: running(footer);
+  margin-top: -25px;
+}
+
+.page-container {
+  display: block;
+  position: running(pageContainer);
+  margin-top: -25px;
+  font-size: 12px;
+  text-align: right;
+  color: #999;
+}
+
+.page-container .page::after {
+  content: counter(page);
+}
+
+.page-container .pages::after {
+  content: counter(pages);
+}
+
+
+@page {
+  @bottom-right {
+    content: element(pageContainer);
+  }
+
+  @bottom-left {
+    content: element(footer);
+  }
+}
+
+.web-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+}
